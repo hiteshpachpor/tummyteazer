@@ -27,6 +27,10 @@ a:focus {
     margin: auto;
 }
 
+.muted {
+    opacity: 0.5;
+}
+
 .header {
     .header-contents {
         padding: 4em 0;
@@ -165,12 +169,29 @@ a:focus {
     position: relative;
     height: 0;
 
-    iframe {
+    iframe,
+    .overlay {
         left: 0;
         top: 0;
         height: 100%;
         width: 100%;
         position: absolute;
+    }
+
+    .overlay {
+        background-color: rgba(255, 255, 255, 0.75);
+
+        .overlay-text {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2em;
+            line-height: 2em;
+            margin-top: -1em;
+            font-size: 1.25em;
+            text-align: center;
+        }
     }
 }
 
