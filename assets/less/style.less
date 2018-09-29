@@ -57,6 +57,11 @@ a:focus {
     .menu {
         margin-top: 4em;
 
+        .close-menu,
+        .menu-footer {
+            display: none;
+        }
+
         .nav {
             display: inline-flex;
         }
@@ -151,6 +156,7 @@ a:focus {
 
     .card {
         height: 100%;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
     }
 
     .card-title {
@@ -186,24 +192,97 @@ a:focus {
             top: 50%;
             left: 0;
             right: 0;
-            height: 2em;
-            line-height: 2em;
-            margin-top: -1em;
+            height: 2.4em;
+            line-height: 1.2em;
+            margin: -1em 1em 0 1em;
             font-size: 1.25em;
             text-align: center;
+            color: #666666;
         }
     }
 }
 
+.menu-footer,
 .footer {
     margin: 2em 0;
     color: #968E8E;
 }
 
+.mobile-only {
+    display: none;
+}
+
 @media @smartphones {
+    .mobile-only {
+        display: block;
+    }
+
+    .mobile-menu-fab {
+        position: fixed;
+        bottom: 1.5em;
+        right: 1.5em;
+        z-index: 100;
+
+        .burger-icon {
+            height: 2.5em;
+            line-height: 2.6em;
+            width: 2.5em;
+            padding: 0;
+            font-size: 1.25em;
+            border-radius: 50%;
+            text-align: center;
+            background: #f9ab25;
+            color: #FFFFFF;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        }
+    }
+
     .header {
         .menu {
-            display: none;
+            position: fixed;
+            top: 130vh;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: 0;
+            opacity: 0.5;
+            z-index: 100;
+            background: #FFFFFF;
+            transition: all 0.4s ease-in-out;
+
+            &.reveal {
+                top: 0;
+                opacity: 1;
+            }
+
+            .close-menu {
+                display: block;
+
+                .close {
+                    padding: 1em;
+                    font-size: 1.5em;
+                }
+            }
+
+            .menu-footer {
+                display: block;
+                margin: 2em 1em 0;
+                text-align: left;
+            }
+
+            .nav {
+                display: block;
+                text-align: left;
+            }
+
+            .menu-item {
+                .nav-link {
+                    margin: 0 1em;
+                    padding: 1em 0;
+                    color: #333;
+                    border-bottom: 1px solid #EEEEEE;
+                }
+            }
         }
     }
 
