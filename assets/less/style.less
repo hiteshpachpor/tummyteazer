@@ -19,8 +19,10 @@ a:hover,
 a:visited,
 a:active,
 a:focus {
-    color: #333;
-    font-weight: 600;
+    &:not(.btn) {
+        color: #333;
+        font-weight: 600;
+    }
 }
 
 .centered {
@@ -78,6 +80,15 @@ a:focus {
             .nav-link {
                 color: #7D1A14;
             }
+        }
+    }
+
+    .contact-us {
+        margin-top: 3em;
+
+        .btn {
+            background: #A41E20;
+            border: none;
         }
     }
 }
